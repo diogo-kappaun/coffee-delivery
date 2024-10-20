@@ -5,7 +5,7 @@ import { ButtonCart } from './ButtonCart'
 
 export const Header = () => {
   return (
-    <div className="flex justify-between p-8">
+    <div className="w-page mx-auto flex justify-between p-8">
       <Link to="/">
         <img src={Logo} alt="Logo da Coffee Delivery" />
       </Link>

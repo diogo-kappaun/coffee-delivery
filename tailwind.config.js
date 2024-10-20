@@ -67,6 +67,9 @@ export default {
           5: 'hsl(var(--chart-5))',
         },
       },
+      width: {
+        page: 'min(1120px, 100%)',
+      },
     },
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports
