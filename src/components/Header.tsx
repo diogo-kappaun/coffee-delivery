@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 export const Header = () => {
   return (
-    <div className="w-page mx-auto flex justify-between p-8">
+    <div className="w-page mx-auto flex items-center justify-between gap-2 px-5 py-8">
       <Link to="/">
         <img src={Logo} alt="Logo da Coffee Delivery" />
       </Link>
