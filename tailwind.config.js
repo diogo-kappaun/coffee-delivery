@@ -6,7 +6,7 @@ export default {
     extend: {
       fontFamily: {
         sans: 'Roboto, sans-serif',
-        baloo: 'Baloo 2, sans-serif',
+        baloo: '"Baloo 2", sans-serif',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -68,7 +68,8 @@ export default {
         },
       },
       width: {
-        page: 'min(1120px, 100%)',
+        page: 'min(1160px, 100%)',
+        img: 'clamp(20.25rem, -26.4745rem + 77.551vw, 29.75rem)',
       },
     },
   },
