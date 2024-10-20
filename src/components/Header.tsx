@@ -1,7 +1,7 @@
 import Logo from '@/assets/logo.svg'
-import { Location } from '@/components/Location'
+import { ButtonCart } from '@/components/Header/ButtonCart'
+import { Location } from '@/components/Header/Location'
 import { Link } from 'react-router-dom'
-import { ButtonCart } from './ButtonCart'
 
 export const Header = () => {
   return (
