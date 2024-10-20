@@ -12,9 +12,9 @@ export const Hero = () => {
     <div className="bg-[url('./src/assets/bg-hero.png')] bg-cover bg-center py-[92px]">
       <div className="w-page md mx-auto flex flex-col items-center justify-between gap-2 px-5 md:flex-row">
         <div className="space-y-4 md:w-[592px]">
-          <h2 className="font-baloo text-4xl font-extrabold lg:text-5xl">
+          <h1 className="font-baloo text-4xl font-extrabold lg:text-5xl">
             Encontre o café perfeito para qualquer hora do dia
-          </h2>
+          </h1>
           <p className="text-lg lg:text-xl">
             Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
             hora
