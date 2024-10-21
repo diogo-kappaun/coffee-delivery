@@ -71,6 +71,12 @@ export default {
         page: 'min(1160px, 100%)',
         img: 'clamp(20.25rem, -26.4745rem + 77.551vw, 29.75rem)',
       },
+      gridTemplateColumns: {
+        4: 'repeat(4, max-content)',
+        3: 'repeat(3, max-content)',
+        2: 'repeat(2, max-content)',
+        1: 'max-content',
+      },
     },
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports
