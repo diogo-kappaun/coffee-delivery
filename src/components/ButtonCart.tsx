@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { tv } from 'tailwind-variants'
 
 interface ButtonCartProps {
-  amountCart: number
+  amountCart?: number
   withAmount?: boolean
   variant?: 'header' | 'card'
 }
