@@ -1,17 +1,17 @@
 import Logo from '@/assets/logo.svg'
-import { ButtonCart } from '@/components/Header/ButtonCart'
+import { ButtonCart } from '@/components/ButtonCart'
 import { Location } from '@/components/Header/Location'
 import { Link } from 'react-router-dom'
 
 export const Header = () => {
   return (
-    <div className="w-page mx-auto flex items-center justify-between gap-2 px-5 py-8">
+    <div className="mx-auto flex w-page items-center justify-between gap-2 px-5 py-8">
       <Link to="/">
         <img src={Logo} alt="Logo da Coffee Delivery" />
       </Link>
       <div className="flex gap-3">
         <Location city="Maravilha" state="SC" />
-        <ButtonCart amountCart={3} />
+        <ButtonCart variant="header" withAmount amountCart={3} />
       </div>
     </div>
   )
