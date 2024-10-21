@@ -3,7 +3,7 @@ import { PiMapPinFill } from 'react-icons/pi'
 
 export const Success = () => {
   return (
-    <main className="mx-auto mt-20 w-page space-y-10">
+    <main className="mx-auto mt-20 w-page space-y-10 px-5">
       <div className="space-y-1">
         <h2 className="font-baloo text-3xl font-extrabold text-product-yellow-dark">
           Uhu! Pedido confirmado
@@ -45,7 +45,11 @@ export const Success = () => {
             </div>
           </div>
         </div>
-        <img src={motocycle} alt="" />
+        <img
+          src={motocycle}
+          alt=""
+          className="hidden w-img object-scale-down md:block"
+        />
       </div>
     </main>
   )
