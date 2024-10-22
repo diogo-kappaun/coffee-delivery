@@ -11,7 +11,7 @@ export const Header = () => {
       </Link>
       <div className="flex gap-3">
         <Location city="Maravilha" state="SC" />
-        <Link to="/cart">
+        <Link to="/checkout">
           <ButtonCart variant="header" withAmount amountCart={3} />
         </Link>
       </div>
