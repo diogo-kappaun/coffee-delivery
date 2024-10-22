@@ -76,6 +76,7 @@ export default {
         3: 'repeat(3, max-content)',
         2: 'repeat(2, max-content)',
         1: 'max-content',
+        form: 'minmax(120px, 200px) minmax(196px,276px) 60px',
       },
     },
   },
