@@ -13,7 +13,7 @@ export const CartItem = ({ data }: CartItemProps) => {
       <img src={`./public/${data.url}.png`} alt="" className="h-16" />
       <div className="flex-1 space-y-2">
         <span>{data.name}</span>
-        <div className="flex gap-2">
+        <div className="flex flex-col items-start gap-2 min-[500px]:flex-row min-[500px]:items-center">
           <AmountControl amount={data.amount} />
           <Button variant="secondary" className="flex items-center">
             <PiTrash className="text-product-purple" size={16} />
