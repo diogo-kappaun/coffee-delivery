@@ -9,7 +9,7 @@ export function AmountControl({
   amount /*, onIncrease, onDescrease */,
 }: AmountControlProps) {
   return (
-    <div className="flex items-center justify-center gap-1 rounded-md bg-muted px-2">
+    <div className="flex min-h-9 items-center justify-center gap-1 rounded-md bg-muted px-2">
       <Button
         /* onClick={onDescrease} */ className="h-max px-0 py-0"
         variant="ghost"
