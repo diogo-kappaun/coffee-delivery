@@ -11,3 +11,9 @@ export const DeliveryAddressSchema = z.object({
   city: z.string().min(1, { message: 'Informe uma cidade válida!' }),
   state: z.string().min(1, { message: 'Informe um estado válido!' }),
 })
+
+export const PaymentMethodSchema = z.object({
+  type: z.enum(['credit', 'debit', 'money'], {
+    required_error: 'Voce precisa selecionar alguma forma de pagamento!',
+  }),
+})
