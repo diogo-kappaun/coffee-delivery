@@ -27,7 +27,7 @@ export const DeliveryForm = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="min-[500px]:grid-cols-form mt-8 flex flex-col gap-[16px_12px] min-[500px]:grid"
+        className="mt-8 flex flex-col gap-[16px_12px] min-[500px]:grid min-[500px]:grid-cols-form"
       >
         <FormField
           control={form.control}
