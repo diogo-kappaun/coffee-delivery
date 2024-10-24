@@ -11,16 +11,20 @@ interface CartItemProps {
 }
 
 export const CartItem = ({ data }: CartItemProps) => {
+  const { itemDescrease, itemIncrease } = useCart()
+
   const [quantity, setQuantity] = useState(data.quantity)
 
   const { removeToCart } = useCart()
 
   const onIncrease = () => {
-    if (data.quantity >= 15) {
+    if (quantity >= 15) {
       return
     }
 
     setQuantity((prevState) => prevState + 1)
+
+    return itemIncrease(data.id)
   }
 
   const onDescrease = () => {
@@ -29,6 +33,8 @@ export const CartItem = ({ data }: CartItemProps) => {
     }
 
     setQuantity((prevState) => prevState - 1)
+
+    return itemDescrease(data.id)
   }
 
   return (
@@ -54,7 +60,7 @@ export const CartItem = ({ data }: CartItemProps) => {
         {new Intl.NumberFormat('pt-BR', {
           style: 'currency',
           currency: 'BRL',
-        }).format(data.price * data.quantity)}
+        }).format(data.price * quantity)}
       </strong>
     </div>
   )
