@@ -26,10 +26,15 @@ export interface NewItemProps {
 }
 
 export const Card = ({ data }: CardProps) => {
+  const { items, addToCart, changeQuantity } = useCart()
+
   const [quantity, setQuantity] = useState(1)
-  const { addToCart } = useCart()
 
   const handleAddCart = () => {
+    if (items.some((item) => item.id === data.id)) {
+      return changeQuantity(data.id, quantity)
+    }
+
     const newItem: NewItemProps = {
       id: data.id,
       url: data.url,
