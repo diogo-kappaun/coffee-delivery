@@ -1,5 +1,6 @@
 import { AmountControl } from '@/components/AmountControl'
 
+import { useCart } from '@/cart'
 import { ButtonCart } from '@/components/ButtonCart'
 import {
   CardContainer,
@@ -9,13 +10,53 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { useState } from 'react'
 import { DataProps } from '..'
 
 interface CardProps {
   data: DataProps
 }
 
+export interface NewItemProps {
+  id: string
+  url: string
+  name: string
+  price: number
+  quantity: number
+}
+
 export const Card = ({ data }: CardProps) => {
+  const [quantity, setQuantity] = useState(1)
+  const { addToCart } = useCart()
+
+  const handleAddCart = () => {
+    const newItem: NewItemProps = {
+      id: data.id,
+      url: data.url,
+      name: data.name,
+      price: data.price,
+      quantity,
+    }
+
+    addToCart(newItem)
+  }
+
+  const onIncrease = () => {
+    if (quantity >= 15) {
+      return
+    }
+
+    setQuantity((prevState) => prevState + 1)
+  }
+
+  const onDescrease = () => {
+    if (quantity <= 1) {
+      return
+    }
+
+    setQuantity((prevState) => prevState - 1)
+  }
+
   return (
     <CardContainer className="relative flex h-[310px] w-64 flex-col items-center rounded-[6px_36px]">
       <img
@@ -49,8 +90,12 @@ export const Card = ({ data }: CardProps) => {
           </span>
         </div>
         <div className="flex gap-2">
-          <AmountControl amount={1} />
-          <ButtonCart />
+          <AmountControl
+            onDescrease={onDescrease}
+            onIncrease={onIncrease}
+            amount={quantity}
+          />
+          <ButtonCart onAddCart={handleAddCart} />
         </div>
       </CardFooter>
     </CardContainer>

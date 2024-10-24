@@ -6,12 +6,14 @@ interface ButtonCartProps {
   amountCart?: number
   withAmount?: boolean
   variant?: 'header' | 'card'
+  onAddCart?: () => void
 }
 
 export const ButtonCart = ({
   amountCart,
   withAmount = false,
   variant = 'card',
+  onAddCart,
 }: ButtonCartProps) => {
   const buttonCart = tv({
     base: 'h-10 w-10 p-2',
@@ -26,12 +28,12 @@ export const ButtonCart = ({
 
   return (
     <div className="group relative">
-      {withAmount && (
+      {withAmount && amountCart !== 0 && (
         <div className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-product-yellow-dark text-xs font-bold text-white group-hover:bg-product-yellow-dark/80">
           {amountCart}
         </div>
       )}
-      <Button className={buttonCart({ variant })}>
+      <Button onClick={onAddCart} className={buttonCart({ variant })}>
         <PiShoppingCartFill size={22} />
       </Button>
     </div>

@@ -1,3 +1,4 @@
+import { useCart } from '@/cart'
 import { Button } from '@/components/ui/button'
 import { CartItem } from '@/pages/Checkout/components/CartItem'
 import { DeliveryForm } from '@/pages/Checkout/components/DeliveryForm'
@@ -11,34 +12,29 @@ export interface CartProductsProps {
   url: string
   name: string
   price: number
-  amount: number
+  quantity: number
 }
 
 export const Checkout = () => {
-  const cartProducts: CartProductsProps[] = [
-    {
-      id: '1',
-      url: 'image',
-      name: 'Expresso Tradicional',
-      price: 9.9,
-      amount: 1,
-    },
-    {
-      id: '6',
-      url: 'image-5',
-      name: 'Latte',
-      price: 9.9,
-      amount: 2,
-    },
-  ]
+  const { items } = useCart()
 
   const deliveryPrice = 3.5
 
-  const cartProductsPrice = cartProducts.map((item) => item.price * item.amount)
-
-  const totalCartProducts = cartProductsPrice.reduce(
-    (accumulator, currentValue) => accumulator + currentValue,
+  const totalCartProducts = items.reduce(
+    (accumulator, item) => accumulator + item.price * item.quantity,
+    0,
   )
+
+  if (items.length === 0) {
+    return (
+      <div className="mx-auto flex w-page flex-col items-center">
+        <h2 className="text-2xl font-bold">Sem items no carrinho</h2>
+        <Link to="/">
+          <Button variant="link">Voltar para o início</Button>
+        </Link>
+      </div>
+    )
+  }
 
   return (
     <main className="mx-auto mt-10 flex w-page flex-col gap-8 px-5 pb-12 lg:flex-row">
@@ -72,9 +68,7 @@ export const Checkout = () => {
       <div className="space-y-4">
         <h2 className="font-baloo text-lg font-bold">Cafés selecionados</h2>
         <div className="space-y-6 rounded-[6px_36px] bg-card p-10">
-          {cartProducts.map((item) => (
-            <CartItem key={item.id} data={item} />
-          ))}
+          {items && items.map((item) => <CartItem key={item.id} data={item} />)}
 
           <div className="flex flex-col gap-1">
             <OrderSummary text="Total de itens" value={totalCartProducts} />
