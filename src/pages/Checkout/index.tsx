@@ -65,7 +65,7 @@ export const Checkout = () => {
           <PaymentForm />
         </div>
       </div>
-      <div className="space-y-4">
+      <div className="w-[460px] space-y-4">
         <h2 className="font-baloo text-lg font-bold">Cafés selecionados</h2>
         <div className="space-y-6 rounded-[6px_36px] bg-card p-10">
           {items && items.map((item) => <CartItem key={item.id} data={item} />)}
