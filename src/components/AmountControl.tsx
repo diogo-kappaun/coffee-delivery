@@ -3,15 +3,21 @@ import { PiMinusBold, PiPlusBold } from 'react-icons/pi'
 
 interface AmountControlProps {
   amount: number
+  onIncrease: () => void
+  onDescrease: () => void
 }
 
 export function AmountControl({
-  amount /*, onIncrease, onDescrease */,
+  amount,
+  onIncrease,
+  onDescrease,
 }: AmountControlProps) {
   return (
     <div className="flex min-h-9 items-center justify-center gap-1 rounded-md bg-muted px-2">
       <Button
-        /* onClick={onDescrease} */ className="h-max px-0 py-0"
+        onClick={onDescrease}
+        disabled={amount <= 1}
+        className="h-max px-0 py-0"
         variant="ghost"
       >
         <PiMinusBold
@@ -21,7 +27,9 @@ export function AmountControl({
       </Button>
       <span className="w-6 text-center text-base">{amount}</span>
       <Button
-        /* onClick={onIncrease} */ className="h-max px-0 py-0"
+        onClick={onIncrease}
+        disabled={amount >= 15}
+        className="h-max px-0 py-0"
         variant="ghost"
       >
         <PiPlusBold
