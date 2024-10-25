@@ -1,19 +1,14 @@
 import * as z from 'zod'
 
-export const DeliveryAddressSchema = z.object({
-  zipCode: z
-    .string()
-    .min(9, { message: 'Por favor informe um CEP válido (00000-000)' }),
-  street: z.string().min(1, { message: 'Informe uma rua válida!' }),
-  number: z.string().min(1, { message: 'Informe um número válido!' }),
+export const DeliverySchema = z.object({
+  zipCode: z.string().min(1, { message: 'Informe um CEP' }),
+  street: z.string().min(1, { message: 'Informe uma Rua' }),
+  number: z.string().min(1, { message: 'Informe um Numero' }),
   complement: z.string().optional(),
-  district: z.string().min(1, { message: 'Informe um bairro válido!' }),
-  city: z.string().min(1, { message: 'Informe uma cidade válida!' }),
-  state: z.string().min(1, { message: 'Informe um estado válido!' }),
-})
-
-export const PaymentMethodSchema = z.object({
-  type: z.enum(['credit', 'debit', 'money'], {
-    required_error: 'Voce precisa selecionar alguma forma de pagamento!',
+  district: z.string().min(1, { message: 'Informe um Bairro' }),
+  city: z.string().min(1, { message: 'Informe um Cidade' }),
+  state: z.string().min(1, { message: 'Informe um Estado' }),
+  method: z.enum(['credit', 'debit', 'money'], {
+    invalid_type_error: 'Informe um método de pagamento',
   }),
 })
