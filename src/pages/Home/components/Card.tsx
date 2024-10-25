@@ -1,6 +1,5 @@
 import { AmountControl } from '@/components/AmountControl'
 
-import { useCart } from '@/cart'
 import { ButtonCart } from '@/components/ButtonCart'
 import {
   CardContainer,
@@ -10,6 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { useCart } from '@/store/cart'
 import { useState } from 'react'
 import { DataProps } from '..'
 

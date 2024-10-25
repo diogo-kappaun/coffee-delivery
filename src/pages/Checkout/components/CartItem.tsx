@@ -1,7 +1,7 @@
-import { useCart } from '@/cart'
 import { AmountControl } from '@/components/AmountControl'
 import { Button } from '@/components/ui/button'
 import { RemoveAlert } from '@/pages/Checkout/components/RemoveAlert'
+import { useCart } from '@/store/cart'
 import { useState } from 'react'
 import { PiTrash } from 'react-icons/pi'
 import { CartProductsProps } from '..'
@@ -49,9 +49,11 @@ export const CartItem = ({ data }: CartItemProps) => {
             amount={quantity}
           />
           <RemoveAlert onConfirm={() => removeToCart(data.id)}>
-            <Button variant="secondary" className="flex items-center">
-              <PiTrash className="text-product-purple" size={16} />
-              <span className="font-normal">Remover</span>
+            <Button asChild variant="secondary" className="flex items-center">
+              <span>
+                <PiTrash className="text-product-purple" size={16} />
+                <span className="font-normal">Remover</span>
+              </span>
             </Button>
           </RemoveAlert>
         </div>
