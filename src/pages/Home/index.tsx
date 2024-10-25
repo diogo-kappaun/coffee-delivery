@@ -19,7 +19,7 @@ export const Home = () => {
       <Hero />
 
       <div className="mx-auto w-page px-5">
-        <h2 className="font-baloo text-2xl font-extrabold lg:text-3xl">
+        <h2 className="mt-4 font-baloo text-2xl font-extrabold lg:text-3xl">
           Nossos cafés
         </h2>
         <div className="grid grid-cols-1 justify-center gap-8 py-12 min-[584px]:grid-cols-2 min-[872px]:grid-cols-3 min-[1160px]:grid-cols-4">
