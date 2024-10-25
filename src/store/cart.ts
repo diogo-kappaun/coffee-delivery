@@ -5,6 +5,7 @@ interface CartProps {
   items: NewItemProps[]
   addToCart: (newItem: NewItemProps) => void
   removeToCart: (itemID: string) => void
+  cleanCart: () => void
   changeQuantity: (itemID: string, quantity: number) => void
   itemIncrease: (itemID: string) => void
   itemDescrease: (itemID: string) => void
@@ -19,6 +20,10 @@ export const useCart = create<CartProps>((set) => ({
   removeToCart: (itemID) =>
     set((state) => ({
       items: state.items.filter((item) => item.id !== itemID),
+    })),
+  cleanCart: () =>
+    set(() => ({
+      items: [],
     })),
   changeQuantity: (itemID, quantity) =>
     set((state) => ({
