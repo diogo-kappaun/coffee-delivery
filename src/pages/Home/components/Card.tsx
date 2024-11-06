@@ -66,7 +66,7 @@ export const Card = ({ data }: CardProps) => {
     <CardContainer className="relative flex h-[310px] w-64 flex-col items-center rounded-[6px_36px]">
       <img
         className="absolute -top-5 w-[120px]"
-        src={`./public/${data.url}.png`}
+        src={`/assets/${data.url}.png`}
         alt=""
       />
       <CardHeader className="relative flex w-full flex-row justify-center gap-1 space-y-0 pb-4 pt-28">
