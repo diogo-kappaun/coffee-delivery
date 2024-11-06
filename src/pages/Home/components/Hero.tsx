@@ -9,7 +9,7 @@ import {
 
 export const Hero = () => {
   return (
-    <div className="bg-[url('./src/assets/bg-hero.png')] bg-cover bg-center py-[92px]">
+    <div className="bg-[url('/src/assets/bg-hero.png')] bg-cover bg-center py-[92px]">
       <div className="md mx-auto flex w-page flex-col items-center justify-between gap-2 px-5 md:flex-row">
         <div className="space-y-4 md:w-[592px]">
           <h1 className="font-baloo text-4xl font-extrabold lg:text-5xl">
